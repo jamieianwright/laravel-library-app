@@ -11,6 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'IndexController@index');
+
+Route::prefix('books')->group(function () {
+    Route::get('/', 'BooksController@index');
+
+    Route::post('/', function () {
+        
+    });
+
+    Route::put('/{id}', function($bookId){
+
+    });
+
+    Route::delete('/{id}', function($bookId){
+
+    });
 });
+
