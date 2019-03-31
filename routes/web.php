@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +19,7 @@ Route::get('/', 'IndexController@index');
 Route::prefix('books')->group(function () {
     Route::get('/', 'BooksController@index');
 
-    Route::post('/', function () {
-        
-    });
+    Route::post('/', 'BooksController@create');
 
     Route::put('/{id}', function($bookId){
 
