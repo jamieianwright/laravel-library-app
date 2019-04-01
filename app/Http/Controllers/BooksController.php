@@ -33,9 +33,17 @@ class BooksController extends Controller
         return redirect('/books');
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        
+        Book::where('id', '=', $id)->update([
+            'title'=>$request->input('updateTitle'),
+            'description'=>$request->input('updateDescription'),
+            'release_date'=>$request->input('updateReleaseDate'),
+            'author_id'=>$request->input('updateAuthor'),
+            'publisher_id'=>$request->input('updatePublisher'),
+        ]);
+
+        return redirect('/books');
     }
 
     public function delete(Request $request)

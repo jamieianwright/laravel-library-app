@@ -17,8 +17,9 @@
     </button>
   </div>
   <div class="modal-body">
-    <form class='' id='updateBookForm' method='PUT' action='/books'>
-      {{ csrf_field() }}
+    <form class='' id='updateBookForm' method='POST' action='/books'>
+      <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
       <div class='row'>
         <div class="form-group col-md-6 col-sm-12">
           <label for="bookTitle">Title</label>
@@ -50,12 +51,10 @@
               @endforeach
           </select>
         </div>
-      </div>              
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary">Save changes</button>
-  </form>
+      </div>   
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </form>             
   </div>
 </div>
 </div>
@@ -65,6 +64,7 @@
 
 <div class='my-4'>
 <form class='collapse' id='addBookForm' method='POST' action='/books'>
+  
 {{ csrf_field() }}
 <div class='row'>
     <div class="form-group col-md-6 col-sm-12">

@@ -5,7 +5,7 @@ $(document).ready(function(){
       })
     });
 
-    $(".btn").click(function(e){
+    $(".bookTitle").click(function(e){
       var id = $(this).parent('.book').data('id')
       $(this).text(function(i, text){
         $('#updateTitle').val(text)

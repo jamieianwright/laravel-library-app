@@ -21,12 +21,8 @@ Route::prefix('books')->group(function () {
 
     Route::post('/', 'BooksController@create');
 
-    Route::put('/{id}', function($bookId){
+    Route::put('/{id}', 'BooksController@update');
 
-    });
-
-    Route::delete('/{id}', function($bookId){
-
-    });
+    Route::delete('/{id}', 'BooksController@delete');
 });
 
