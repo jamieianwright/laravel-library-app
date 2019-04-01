@@ -17,12 +17,11 @@ class BooksController extends Controller
         $publishers = Publisher::all();
         $genres = Genre::all();
 
-        return view('books', ['books' => $books, 'authors' => $authors, 'publishers' => $publishers, 'genres' => $genres]);
+        return view('pages.books', ['books' => $books, 'authors' => $authors, 'publishers' => $publishers, 'genres' => $genres]);
     }
 
     public function create(Request $request)
     {
-        // dd($request->input());
         $book = new Book();
         $book->title = $request->input('bookTitle');
         $book->description = $request->input('bookDescription');
@@ -32,5 +31,15 @@ class BooksController extends Controller
         $book->save();
 
         return redirect('/books');
+    }
+
+    public function update(Request $request)
+    {
+        
+    }
+
+    public function delete(Request $request)
+    {
+        
     }
 }
