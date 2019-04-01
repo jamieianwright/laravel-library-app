@@ -21,6 +21,7 @@ class CreateBooksTable extends Migration
             $table->date('release_date');
             $table->integer('author_id')->unsigned();
             $table->integer('publisher_id')->unsigned();
+            $table->softDeletes();
         });
     }
 

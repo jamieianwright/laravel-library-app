@@ -23,5 +23,6 @@ $(document).ready(function(){
         $("#updatePublisher option:contains(" + text + ")").attr('selected','selected');
       })
       $('#updateBookForm').attr('action', '/books/' + id)
+      $('#deleteBookForm').attr('action', '/books/' + id)
     })
 });
